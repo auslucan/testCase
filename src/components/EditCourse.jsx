@@ -1,57 +1,49 @@
 import { Button, Form, Segment } from "semantic-ui-react";
 import React, { useState } from "react";
 
-export default function EditMovie(props) {
-  const [movie, setMovie] = useState(props.movie);
-
+export default function EditCourse(props) {
+  const [course, setCourse] = useState(props.course);
   function handleSubmit(e) {
     e.preventDefault();
-    props.handleEditMovie(movie);
+    props.handleEditCourse(course);
   }
 
   function handleInputChange(event) {
     const { name, value } = event.target;
-    setMovie({ ...movie, [name]: value });
+    setCourse({ ...course, [name]: value });
   }
 
   return (
     <>
-      <h1 style={{ marginLeft: "15px" }}>Edit Movie</h1>
+      <h1 style={{ marginLeft: "15px" }}>Edit Course</h1>
       <Segment
         clearing
         style={{ marginRight: "30px", marginTop: "30px", marginLeft: "10px" }}
       >
         <Form onSubmit={handleSubmit} autoComplete="off">
           <Form.Input
-            placeholder="Title"
-            value={movie.title}
-            name="title"
+            placeholder="Name"
+            value={course.name}
+            name="name"
             onChange={handleInputChange}
           />
 
           <Form.Input
-            placeholder="Language"
-            value={movie.movieLanguage}
-            name="movieLanguage"
+            placeholder="Start Date"
+            value={course.startDate}
+            name="startDate"
             onChange={handleInputChange}
           />
           <Form.Input
-            placeholder="Year"
-            value={movie.releaseYear}
-            name="releaseYear"
+            placeholder="End Date"
+            value={course.endDate}
+            name="endDate"
             onChange={handleInputChange}
           />
-
           <Form.Input
-            placeholder="OTT"
-            value={movie.ott}
-            name="ott"
-            onChange={handleInputChange}
-          />
-          <Form.TextArea
-            placeholder="Description"
-            value={movie.description}
-            name="description"
+            placeholder="Status"
+            value={course.status}
+            name="status"
             onChange={handleInputChange}
           />
           <Button floated="right" positive type="submit" content="Submit" />

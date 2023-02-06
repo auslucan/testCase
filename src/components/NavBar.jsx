@@ -6,14 +6,14 @@ export default function NavBar(props) {
     <Menu inverted fixed="top">
       <Menu.Item header>
         <img
-          src="/movieslogo.png"
+          src="/educationlogo.png"
           alt="logo"
           style={{ marginRight: "10px", marginLeft: "10px" }}
         />
-        Movies
+        Courses
       </Menu.Item>
       <Menu.Item>
-        <Button positive content="Add Movie" onClick={() => props.addForm()} />
+        <Button positive content="Add Course" onClick={() => props.addForm()} />
       </Menu.Item>
     </Menu>
   );
